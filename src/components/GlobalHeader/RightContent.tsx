@@ -62,16 +62,19 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = props => {
         onSearch={() => { }}
         onPressEnter={() => { }}
       /> */}
-      <Tooltip title="使用文档">
-        <a
-          target="_blank"
-          href="http://doc.jetlinks.cn/"
-          rel="noopener noreferrer"
-          className={styles.action}
-        >
-          <Icon type="question-circle-o" />
-        </a>
-      </Tooltip>
+
+      <Tooltip title="大数据展示界面">
+      <a
+        target="_blank"
+        href="http://159.75.22.48:7001/"
+        rel="noopener noreferrer"
+        className={styles.action}
+      >
+        <Icon type="dashboard" />
+      </a>
+    </Tooltip>
+
+
       <span onClick={() => { fetchData() }}>
         <NoticeIconView />
       </span>

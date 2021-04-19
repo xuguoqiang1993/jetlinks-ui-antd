@@ -3,9 +3,10 @@ import { map, catchError } from 'rxjs/operators';
 import { of, Observable, from, defer } from "rxjs";
 import { getAccessToken } from '@/utils/authority';
 // import request from 'umi-request';
-import { ApiResponse } from './response';
-import { ajax } from 'rxjs/ajax';
-import { message } from 'antd';
+// import { ApiResponse } from './response';
+// import { ajax } from 'rxjs/ajax';
+// import { message } from 'antd';
+
 import request from '@/utils/request';
 
 interface BaseServieImpl<T> {

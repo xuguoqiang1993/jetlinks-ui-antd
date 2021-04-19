@@ -30,13 +30,22 @@ export const routes = [
                     //     icon: 'table',
                     //     component: './demo'
                     // },
+                  // {
+                  //   name: '统计分析',
+                  //   path: '/analysis',
+                  //   icon: 'dashboard',
+                  //   tenant: ['admin', 'member'],
+                  //   iconfont: 'icon-tongjifenxi',
+                  //   component: './analysis',
+                  // },
+
                     {
-                        name: '统计分析',
+                        name: '用户管理',
                         path: '/analysis',
                         icon: 'dashboard',
                         tenant: ['admin', 'member'],
                         iconfont: 'icon-tongjifenxi',
-                        component: './analysis',
+                        component: './system/users',
                     },
                     {
                         path: 'system',
@@ -54,23 +63,23 @@ export const routes = [
                                 authority: ['user', 'admin'],
                                 component: './system/users',
                             },
-                            {
-                                path: '/system/permission',
-                                name: '权限管理',
-                                icon: 'key',
-                                iconfont: 'icon-quanxianguanli',
-                                authority: ['permission', 'admin'],
-                                component: './system/permission',
-                            },
-                            {
-                                path: '/system/open-api',
-                                name: '第三方平台',
-                                icon: 'share-alt',
-                                iconfont: 'icon-APIguanli',
-                                authority: ['open-api', 'admin'],
-                                version: 'pro',
-                                component: './system/open-api',
-                            },
+                            // {
+                            //     path: '/system/permission',
+                            //     name: '权限管理',
+                            //     icon: 'key',
+                            //     iconfont: 'icon-quanxianguanli',
+                            //     authority: ['permission', 'admin'],
+                            //     component: './system/permission',
+                            // },
+                            // {
+                            //     path: '/system/open-api',
+                            //     name: '第三方平台',
+                            //     icon: 'share-alt',
+                            //     iconfont: 'icon-APIguanli',
+                            //     authority: ['open-api', 'admin'],
+                            //     version: 'pro',
+                            //     component: './system/open-api',
+                            // },
                             {
                                 path: '/system/org',
                                 name: '机构管理',
@@ -87,6 +96,7 @@ export const routes = [
                                 authority: ['dimension', 'admin'],
                                 component: './system/role',
                             },
+                          //租户管理暂时注释掉
                             {
                                 path: '/system/config',
                                 name: '系统配置',
@@ -95,25 +105,25 @@ export const routes = [
                                 authority: ['system-config', 'admin'],
                                 component: './system/config',
                             },
-                            {
-                                path: '/system/tenant',
-                                name: '租户管理',
-                                icon: 'team',
-                                iconfont: 'icon-erji-zuhuguanli',
-                                tenant: ['admin'],
-                                authority: ['tenant-side-manager', 'tenant-manager', 'admin'],
-                                version: 'pro',
-                                component: './system/tenant'
-                            },
-                            {
-                                hideInMenu: true,
-                                path: '/system/tenant/detail/:id',
-                                name: '租户详情',
-                                tenant: ['admin'],
-                                authority: ['tenant-side-manager', 'tenant-manager', 'admin'],
-                                version: 'pro',
-                                component: './system/tenant/detail',
-                            },
+                            // {
+                            //     path: '/system/tenant',
+                            //     name: '租户管理',
+                            //     icon: 'team',
+                            //     iconfont: 'icon-erji-zuhuguanli',
+                            //     tenant: ['admin'],
+                            //     authority: ['tenant-side-manager', 'tenant-manager', 'admin'],
+                            //     version: 'pro',
+                            //     component: './system/tenant'
+                            // },
+                            // {
+                            //     hideInMenu: true,
+                            //     path: '/system/tenant/detail/:id',
+                            //     name: '租户详情',
+                            //     tenant: ['admin'],
+                            //     authority: ['tenant-side-manager', 'tenant-manager', 'admin'],
+                            //     version: 'pro',
+                            //     component: './system/tenant/detail',
+                            // },
                         ],
                     },
                     {
@@ -298,244 +308,244 @@ export const routes = [
                             },
                         ],
                     },
-                    {
-                        path: 'notice',
-                        name: '通知管理',
-                        iconfont: 'icon-tongzhiguanli',
-                        icon: 'message',
-                        tenant: ['admin', 'member'],
-                        authority: ['certificate', 'network-config', 'device-gateway', , 'template', 'notifier', 'admin'],
-                        routes: [
-                            {
-                                path: '/notice/config',
-                                name: '通知配置',
-                                icon: 'alert',
-                                tenant: ['admin', 'member'],
-                                iconfont: 'icon-SUI_tongzhipeizhi',
-                                authority: ['notifier', 'admin'],
-                                component: './notice/config',
-                            },
-                            {
-                                path: '/notice/template',
-                                name: '通知模版',
-                                icon: 'bell',
-                                tenant: ['admin', 'member'],
-                                iconfont: 'icon-tongzhiguanli',
-                                authority: ['template', 'admin'],
-                                component: './notice/template',
-                            },
-                        ],
-                    },
-                    {
-                        path: 'rule-engine',
-                        name: '规则引擎',
-                        icon: 'retweet',
-                        iconfont: 'icon-guizeyinqing',
-                        tenant: ['admin'],
-                        authority: ['rule-model', 'rule-instance', 'sql-rule', 'admin'],
-                        routes: [
-                            {
-                                path: '/rule-engine/model',
-                                name: '规则模型',
-                                icon: 'gateway',
-                                tenant: ['admin'],
-                                iconfont: 'icon-xian-buguize-moxing',
-                                authority: ['rule-model', 'admin'],
-                                version: 'pro',
-                                component: './rule-engine/model',
-                            },
-                            {
-                                path: '/rule-engine/instance',
-                                name: '规则实例',
-                                icon: 'block',
-                                tenant: ['admin'],
-                                iconfont: 'icon-hangweiguizeshili',
-                                authority: ['rule-instance', 'admin'],
-                                version: 'pro',
-                                component: './rule-engine/instance',
-                            },
-                            {
-                                path: '/rule-engine/sqlRule',
-                                name: '数据转发',
-                                icon: 'rise',
-                                tenant: ['admin'],
-                                iconfont: 'icon-datatransfer',
-                                authority: ['rule-instance', 'admin'],
-                                component: './rule-engine/sqlRule',
-                            },
-                            {
-                                path: '/rule-engine/scene',
-                                name: '场景联动',
-                                icon: 'codeSandbox',
-                                authority: ['rule-scene', 'admin'],
-                                component: './rule-engine/scene'
-                            }
-                            // {
-                            //   path: '/rule-engine/email',
-                            //   name: 'email',
-                            //   icon: 'mail',
-                            //   component: './rule-engine/email',
-                            // },
-                            // {
-                            //   path: '/rule-engine/sms',
-                            //   name: 'sms',
-                            //   icon: 'message',
-                            //   component: './rule-engine/sms',
-                            // },
-                        ],
-                    },
-                    {
-                        path: 'data-screen',
-                        name: '大屏数据',
-                        icon: 'desktop',
-                        tenant: ['admin'],
-                        iconfont: 'icon-icon-',
-                        authority: ['big-screen', 'admin'],
-                        routes: [
-                            {
-                                path: '/data-screen/category',
-                                name: '分类管理',
-                                icon: 'appstore',
-                                tenant: ['admin'],
-                                iconfont: 'icon-category-search-fill',
-                                authority: ['big-screen', 'admin'],
-                                version: 'pro',
-                                component: './data-screen/category',
-                            },
-                            {
-                                path: '/data-screen/screen',
-                                name: '大屏管理',
-                                icon: 'fund',
-                                tenant: ['admin', 'big-screen'],
-                                iconfont: 'icon-screen',
-                                authority: ['big-screen', 'admin'],
-                                version: 'pro',
-                                component: './data-screen/screen',
-                            }
-                        ]
-                    },
-                    {
-                        path: 'simulator',
-                        name: '模拟测试',
-                        icon: 'bug',
-                        version: 'pro',
-                        authority: ['network-simulator', 'admin'],
-                        routes: [
-                            {
-                                path: '/simulator/device',
-                                name: '设备模拟器',
-                                version: 'pro',
-                                icon: 'paper-clip',
-                                authority: ['network-simulator', 'admin'],
-                                component: './simulator/device',
-                            }
-                        ]
-                    },
-                    {
-                        path: 'logger',
-                        name: '日志管理',
-                        icon: 'calendar',
-                        iconfont: 'icon-rizhiguanli',
-                        authority: ['system-logger', 'access-logger', 'admin'],
-                        routes: [
-                            {
-                                path: '/logger/access',
-                                name: '访问日志',
-                                icon: 'dash',
-                                iconfont: 'icon-yonghufangwenrizhi',
-                                authority: ['access-logger', 'admin'],
-                                component: './logger/access',
-                            },
-                            {
-                                path: '/logger/system',
-                                name: '系统日志',
-                                icon: 'ordered-list',
-                                iconfont: 'icon-xitongrizhi',
-                                authority: ['system-logger', 'admin'],
-                                component: './logger/system',
-                            },
-                        ],
-                    },
-                    {
-                        path: 'cloud',
-                        name: '云云对接',
-                        icon: 'cloud',
-                        version: 'pro',
-                        authority: ['dueros-product', 'aliyun-bridge', 'admin'],
-                        routes: [
-                            {
-                                path: '/cloud/duer',
-                                name: 'DuerOS',
-                                version: 'pro',
-                                authority: ['dueros-product', 'admin'],
-                                icon: 'cloud',
-                                component: './cloud/dueros',
-                            },
-                            {
-                                path: '/cloud/aliyun',
-                                name: '阿里云',
-                                version: 'pro',
-                                authority: ['aliyun-bridge', 'admin'],
-                                icon: 'aliyun',
-                                component: './cloud/aliyun',
-                            }
-                        ]
-                    },
-                    {
-                        path: 'account',
-                        name: '个人中心',
-                        icon: 'user',
-                        hideInMenu: true,
-                        routes: [
-                            // {
-                            //   path: '/account/center',
-                            //   name: '个人中心',
-                            //   icon: 'smile',
-                            //   component: './account/center'
-                            // },
-                            {
-                                path: '/account/settings',
-                                name: '个人设置',
-                                icon: 'setting',
-                                component: './account/settings'
-                            },
-                            {
-                                path: '/account/notification',
-                                name: '通知订阅',
-                                icon: 'bell',
-                                component: './account/notification'
-                            }
-                        ]
-                    },
+                    // {
+                    //     path: 'notice',
+                    //     name: '通知管理',
+                    //     iconfont: 'icon-tongzhiguanli',
+                    //     icon: 'message',
+                    //     tenant: ['admin', 'member'],
+                    //     authority: ['certificate', 'network-config', 'device-gateway', , 'template', 'notifier', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/notice/config',
+                    //             name: '通知配置',
+                    //             icon: 'alert',
+                    //             tenant: ['admin', 'member'],
+                    //             iconfont: 'icon-SUI_tongzhipeizhi',
+                    //             authority: ['notifier', 'admin'],
+                    //             component: './notice/config',
+                    //         },
+                    //         {
+                    //             path: '/notice/template',
+                    //             name: '通知模版',
+                    //             icon: 'bell',
+                    //             tenant: ['admin', 'member'],
+                    //             iconfont: 'icon-tongzhiguanli',
+                    //             authority: ['template', 'admin'],
+                    //             component: './notice/template',
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     path: 'rule-engine',
+                    //     name: '规则引擎',
+                    //     icon: 'retweet',
+                    //     iconfont: 'icon-guizeyinqing',
+                    //     tenant: ['admin'],
+                    //     authority: ['rule-model', 'rule-instance', 'sql-rule', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/rule-engine/model',
+                    //             name: '规则模型',
+                    //             icon: 'gateway',
+                    //             tenant: ['admin'],
+                    //             iconfont: 'icon-xian-buguize-moxing',
+                    //             authority: ['rule-model', 'admin'],
+                    //             version: 'pro',
+                    //             component: './rule-engine/model',
+                    //         },
+                    //         {
+                    //             path: '/rule-engine/instance',
+                    //             name: '规则实例',
+                    //             icon: 'block',
+                    //             tenant: ['admin'],
+                    //             iconfont: 'icon-hangweiguizeshili',
+                    //             authority: ['rule-instance', 'admin'],
+                    //             version: 'pro',
+                    //             component: './rule-engine/instance',
+                    //         },
+                    //         {
+                    //             path: '/rule-engine/sqlRule',
+                    //             name: '数据转发',
+                    //             icon: 'rise',
+                    //             tenant: ['admin'],
+                    //             iconfont: 'icon-datatransfer',
+                    //             authority: ['rule-instance', 'admin'],
+                    //             component: './rule-engine/sqlRule',
+                    //         },
+                    //         {
+                    //             path: '/rule-engine/scene',
+                    //             name: '场景联动',
+                    //             icon: 'codeSandbox',
+                    //             authority: ['rule-scene', 'admin'],
+                    //             component: './rule-engine/scene'
+                    //         }
+                    //         // {
+                    //         //   path: '/rule-engine/email',
+                    //         //   name: 'email',
+                    //         //   icon: 'mail',
+                    //         //   component: './rule-engine/email',
+                    //         // },
+                    //         // {
+                    //         //   path: '/rule-engine/sms',
+                    //         //   name: 'sms',
+                    //         //   icon: 'message',
+                    //         //   component: './rule-engine/sms',
+                    //         // },
+                    //     ],
+                    // },
+                    // {
+                    //     path: 'data-screen',
+                    //     name: '大屏数据',
+                    //     icon: 'desktop',
+                    //     tenant: ['admin'],
+                    //     iconfont: 'icon-icon-',
+                    //     authority: ['big-screen', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/data-screen/category',
+                    //             name: '分类管理',
+                    //             icon: 'appstore',
+                    //             tenant: ['admin'],
+                    //             iconfont: 'icon-category-search-fill',
+                    //             authority: ['big-screen', 'admin'],
+                    //             version: 'pro',
+                    //             component: './data-screen/category',
+                    //         },
+                    //         {
+                    //             path: '/data-screen/screen',
+                    //             name: '大屏管理',
+                    //             icon: 'fund',
+                    //             tenant: ['admin', 'big-screen'],
+                    //             iconfont: 'icon-screen',
+                    //             authority: ['big-screen', 'admin'],
+                    //             version: 'pro',
+                    //             component: './data-screen/screen',
+                    //         }
+                    //     ]
+                    // },
+                    // {
+                    //     path: 'simulator',
+                    //     name: '模拟测试',
+                    //     icon: 'bug',
+                    //     version: 'pro',
+                    //     authority: ['network-simulator', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/simulator/device',
+                    //             name: '设备模拟器',
+                    //             version: 'pro',
+                    //             icon: 'paper-clip',
+                    //             authority: ['network-simulator', 'admin'],
+                    //             component: './simulator/device',
+                    //         }
+                    //     ]
+                    // },
+                    // {
+                    //     path: 'logger',
+                    //     name: '日志管理',
+                    //     icon: 'calendar',
+                    //     iconfont: 'icon-rizhiguanli',
+                    //     authority: ['system-logger', 'access-logger', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/logger/access',
+                    //             name: '访问日志',
+                    //             icon: 'dash',
+                    //             iconfont: 'icon-yonghufangwenrizhi',
+                    //             authority: ['access-logger', 'admin'],
+                    //             component: './logger/access',
+                    //         },
+                    //         {
+                    //             path: '/logger/system',
+                    //             name: '系统日志',
+                    //             icon: 'ordered-list',
+                    //             iconfont: 'icon-xitongrizhi',
+                    //             authority: ['system-logger', 'admin'],
+                    //             component: './logger/system',
+                    //         },
+                    //     ],
+                    // },
+                    // {
+                    //     path: 'cloud',
+                    //     name: '云云对接',
+                    //     icon: 'cloud',
+                    //     version: 'pro',
+                    //     authority: ['dueros-product', 'aliyun-bridge', 'admin'],
+                    //     routes: [
+                    //         {
+                    //             path: '/cloud/duer',
+                    //             name: 'DuerOS',
+                    //             version: 'pro',
+                    //             authority: ['dueros-product', 'admin'],
+                    //             icon: 'cloud',
+                    //             component: './cloud/dueros',
+                    //         },
+                    //         {
+                    //             path: '/cloud/aliyun',
+                    //             name: '阿里云',
+                    //             version: 'pro',
+                    //             authority: ['aliyun-bridge', 'admin'],
+                    //             icon: 'aliyun',
+                    //             component: './cloud/aliyun',
+                    //         }
+                    //     ]
+                    // },
+                    // {
+                    //     path: 'account',
+                    //     name: '个人中心',
+                    //     icon: 'user',
+                    //     hideInMenu: true,
+                    //     routes: [
+                    //         // {
+                    //         //   path: '/account/center',
+                    //         //   name: '个人中心',
+                    //         //   icon: 'smile',
+                    //         //   component: './account/center'
+                    //         // },
+                    //         {
+                    //             path: '/account/settings',
+                    //             name: '个人设置',
+                    //             icon: 'setting',
+                    //             component: './account/settings'
+                    //         },
+                    //         {
+                    //             path: '/account/notification',
+                    //             name: '通知订阅',
+                    //             icon: 'bell',
+                    //             component: './account/notification'
+                    //         }
+                    //     ]
+                    // },
                     // {
                     //   name: 'paramter',
                     //   path: '/properties',
                     //   inco: 'bar-chart',
                     //   component: './script-demo',
                     // },
-                    {
-                        name: 'exception',
-                        icon: 'smile',
-                        path: '/exception',
-                        hideInMenu: true,
-                        routes: [
-                            {
-                                path: './500',
-                                name: '500',
-                                component: './exception/500',
-                            },
-                            {
-                                path: './404',
-                                name: '404',
-                                component: './exception/404',
-                            },
-                            {
-                                path: './403',
-                                name: '403',
-                                component: './exception/403',
-                            },
-                        ],
-                    },
+                    // {
+                    //     name: 'exception',
+                    //     icon: 'smile',
+                    //     path: '/exception',
+                    //     hideInMenu: true,
+                    //     routes: [
+                    //         {
+                    //             path: './500',
+                    //             name: '500',
+                    //             component: './exception/500',
+                    //         },
+                    //         {
+                    //             path: './404',
+                    //             name: '404',
+                    //             component: './exception/404',
+                    //         },
+                    //         {
+                    //             path: './403',
+                    //             name: '403',
+                    //             component: './exception/403',
+                    //         },
+                    //     ],
+                    // },
                 ],
             },
             {

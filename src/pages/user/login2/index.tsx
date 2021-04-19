@@ -104,14 +104,15 @@ const Login: React.FC<Props> = props => {
   }, [settings.title]);
 
   const Login = () => {
-    const information = JSON.parse(localStorage.getItem('user-detail') || '');
+    const information = JSON.parse(localStorage.getItem('user-detail') || '{}');
+   // alert(1212121)
     if (current) {
       return (
         <div className={style.login}>
           <div className={style.bg1} />
           <div className={style.gyl}>
-            物联网平台
-        <div className={style.gy2}>MQTT TCP CoAP HTTP , 多消息协议适配 , 可视化规则引擎
+            物联网网关平台
+        <div className={style.gy2}>MQTT 协议, 大数据界面展示
         </div>
           </div>
           <div className={style.box}>
@@ -162,8 +163,8 @@ const Login: React.FC<Props> = props => {
 
       <div className={style.bg1} />
       <div className={style.gyl}>
-        物联网平台
-        <div className={style.gy2}>MQTT TCP CoAP HTTP , 多消息协议适配 , 可视化规则引擎
+        物联网网关平台
+        <div className={style.gy2}>MQTT 协议 , 大数据界面展示
         </div>
       </div>
       {/* style={{ height: enable ? '387px' : '330px' }} */}
